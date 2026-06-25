@@ -1,0 +1,21 @@
+name,lat,lon,type,status
+CCTV-01,37.56650,126.97800,CCTV,Normal
+CCTV-02,37.56670,126.97830,CCTV,Warning
+CCTV-03,37.56690,126.97860,CCTV,Error
+Parking-01,37.56620,126.97780,Parking,Normal
+Parking-02,37.56640,126.97890,Parking,Warning
+Parking-03,37.56680,126.97920,Parking,Normal
+EV-Charger-01,37.56710,126.97820,EV Charger,Normal
+EV-Charger-02,37.56730,126.97880,EV Charger,Warning
+EV-Charger-03,37.56750,126.97910,EV Charger,Normal
+AirQuality-01,37.56590,126.97770,Air Quality,Normal
+AirQuality-02,37.56610,126.97840,Air Quality,Error
+AirQuality-03,37.56660,126.97900,Air Quality,Warning
+StreetLight-01,37.56580,126.97810,Street Light,Normal
+StreetLight-02,37.56600,126.97870,Street Light,Normal
+StreetLight-03,37.56630,126.97930,Street Light,Warning
+Weather-01,37.56700,126.97790,Weather,Normal
+Weather-02,37.56740,126.97850,Weather,Warning
+Emergency-01,37.56650,126.97940,Emergency,Error
+Emergency-02,37.56690,126.97960,Emergency,Normal
+Emergency-03,37.56720,126.97980,Emergency,Warning
