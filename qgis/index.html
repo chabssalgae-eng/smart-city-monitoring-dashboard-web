@@ -2182,27 +2182,10 @@
       setTimeout(handleResize, 120);
     }
 
-    function getRepoBaseUrl() {
-      const { origin, pathname } = window.location;
-      const marker = "/qgis/";
-      const markerIndex = pathname.indexOf(marker);
-      if (markerIndex !== -1) {
-        return `${origin}${pathname.slice(0, markerIndex + 1)}`;
-      }
-      const basePath = pathname.endsWith("/")
-        ? pathname
-        : pathname.slice(0, pathname.lastIndexOf("/") + 1);
-      return `${origin}${basePath}`;
-    }
-
-    function getCsvUrl() {
-      return `${getRepoBaseUrl()}smart_city_facility.csv`;
-    }
-
     async function loadFacilities() {
-      const response = await fetch(getCsvUrl());
+      const response = await fetch("./smart_city_facility.csv");
       if (!response.ok) {
-        throw new Error(`Failed to load smart_city_facility.csv (${response.status})`);
+        throw new Error(`Failed to load smart_city_facility.csv: ${response.status} ${response.statusText}`);
       }
       const text = await response.text();
       facilities = parseCsv(text);
@@ -2276,8 +2259,7 @@
     initMap();
     initCollapsibles();
     loadFacilities().catch((error) => {
-      console.error(error);
-      listEl.innerHTML = `<div class="alerts-empty">Unable to load facility data.</div>`;
+      console.error("Failed to load smart_city_facility.csv:", error);
     });
     updateClock();
     setInterval(updateClock, 1000);
